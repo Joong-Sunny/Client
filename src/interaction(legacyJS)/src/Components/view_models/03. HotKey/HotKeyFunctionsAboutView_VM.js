@@ -3,8 +3,6 @@ import { objectViewModel } from "../../view_models/Object_VM";
 import * as THREE from "three";
 import { runInAction } from "mobx";
 import { scene_store } from "../../stores/Scene_Store";
-import { componentViewModel } from "../Component_VM";
-// import { saveViewModel } from "../Save_VM";
 import { controllerBar_store } from "../../stores/ControllerBar_Store";
 import { renderingContext_store } from "../../stores/RenderingContext_Store";
 import { object_store } from "../../stores/Object_Store";

@@ -5,12 +5,8 @@ import * as THREE from "three";
 import * as SkeletonUtils from "three/examples/jsm/utils/SkeletonUtils";
 import { data_store } from "../../stores/Data_Store";
 import canvasHistory_store from "../../stores/CanvasHistory_Store";
-import { scene_store } from "../../stores/Scene_Store";
-
 import MetaClass from "./MetaClass";
-import { loadersViewModel } from "../../view_models/Loaders_VM";
 import { objectViewModel } from "../../view_models/Object_VM";
-import { ObjectControllerVM } from "../../view_models/ObjectController_VM";
 import AddObjCommand from "../commands/CanvasObject/AddObjCommand";
 import { Material_store } from "../../stores/Material_Store";
 

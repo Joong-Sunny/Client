@@ -5,7 +5,6 @@ import { data_store } from "../../stores/Data_Store";
 import { object_store } from "../../stores/Object_Store";
 import { action } from "mobx";
 import { objectViewModel } from "../Object_VM";
-import { loadersViewModel } from "../Loaders_VM";
 import * as THREE from "three";
 import {
   cartoonShader,
@@ -16,20 +15,12 @@ const MaterialTemplateVM = {
   selectedTemplates: 0,
   materialTemplateName: null,
   materialProps: null,
-  get materialName() {
-    const materialUuid = Object.keys(
-      object_store.selectedObjects[0].materialProps
-    )[0];
-    return object_store.selectedObjects[0].materialProps[materialUuid]["name"];
-  },
+
   get materialTemplates() {
     return data_store.mat_tex_list;
   },
   get selectedMaterialTemplateName() {
     return MaterialTemplateVM.materialTemplateName;
-  },
-  get processedmaterialData() {
-    return MaterialTemplateVM.materialProps;
   },
 
   initMaterialTemplate() {

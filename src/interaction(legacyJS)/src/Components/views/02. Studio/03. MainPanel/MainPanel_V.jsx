@@ -4,7 +4,6 @@ import { observer } from "mobx-react-lite";
 import storeContainer from "../../../stores/storeContainer";
 import useIcon from "../../../hooks/useIcon";
 import { ObjectStateVM } from "../../../view_models/ObjectState_VM";
-import { ObjectControllerVM } from "../../../view_models/ObjectController_VM";
 
 const MainPanel = observer(() => {
   const { common_store, object_store } = storeContainer;
@@ -69,32 +68,6 @@ const MainPanel = observer(() => {
             }}
           />
         )}
-      </Box>
-      <Box
-        id="left"
-        sx={{
-          height: common_store.topSlide
-            ? `calc(100vh - ${206}px)`
-            : `calc(100vh - ${118}px)`,
-          display: "flex",
-          flexDirection: "row",
-          left: "0%",
-          bottom: "40px",
-          position: "absolute",
-          alignItems: "flex-start",
-        }}
-        onClick={(e) => {
-          if (e.target.id === "TabHierarchy") {
-            ObjectControllerVM.DeSelectAll();
-          }
-        }}
-      >
-        {/*{!common_store.isPreview &&*/}
-        {/*  common_store.curCategory === "canvas" &&*/}
-        {/*  common_store.optionLeftTab === "history" && <TabHistory />}*/}
-        {/*{!common_store.isPreview &&*/}
-        {/*  common_store.curCategory === "canvas" &&*/}
-        {/*  common_store.optionLeftTab === "hierarchy" && <TabHierarchy />}*/}
       </Box>
 
       {!common_store.isPreview && (

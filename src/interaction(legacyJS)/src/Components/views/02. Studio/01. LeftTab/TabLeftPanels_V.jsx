@@ -1,9 +1,6 @@
 import { Box, Paper } from "@mui/material";
 import { observer } from "mobx-react";
 import PropTypes from "prop-types";
-import { common_store } from "../../../stores/Common_Store";
-import CanvasHistoryList from "./CanvasHistoryList_V";
-import TabHierarchyList from "./TabHierarchyList_V";
 const TabLeftPanel = observer((props) => {
   const { children, value, index, ...other } = props;
 
@@ -15,12 +12,6 @@ const TabLeftPanel = observer((props) => {
       hidden={value !== index}
       {...other}
     >
-      {value === 0 && common_store.optionLeftTab === "history" && (
-        <CanvasHistoryList />
-      )}
-      {value === 0 && common_store.optionLeftTab === "hierarchy" && (
-        <TabHierarchyList />
-      )}
       {value === 1 && (
         <Paper
           elevation={0}
