@@ -1,3 +1,0 @@
-
-const MainPanelVM = {};
-export { MainPanelVM };

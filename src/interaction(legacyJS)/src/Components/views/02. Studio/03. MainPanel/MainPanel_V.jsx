@@ -2,7 +2,6 @@ import React from "react";
 import { IconButton, Box } from "@mui/material";
 import { observer } from "mobx-react-lite";
 import storeContainer from "../../../stores/storeContainer";
-import ContextMenu from "../00. Common/01. ContextMenu/ContextMenu_V";
 import useIcon from "../../../hooks/useIcon";
 import { ObjectStateVM } from "../../../view_models/ObjectState_VM";
 import { ObjectControllerVM } from "../../../view_models/ObjectController_VM";
@@ -28,8 +27,6 @@ const MainPanel = observer(() => {
         display: "flex",
       }}
     >
-      <ContextMenu />
-      {/*{!common_store.isPreview && <ControllerBar />}*/}
       <Box id="left" sx={style.historyIconWrapper}>
         {!common_store.isPreview && (
           <IconButton
