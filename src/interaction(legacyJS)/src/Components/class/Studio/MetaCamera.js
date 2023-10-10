@@ -1,4 +1,3 @@
-import { renderingContext_store } from "../../stores/RenderingContext_Store";
 import { objectViewModel } from "../../view_models/Object_VM";
 import MetaClass from "./MetaClass";
 import * as THREE from "three";

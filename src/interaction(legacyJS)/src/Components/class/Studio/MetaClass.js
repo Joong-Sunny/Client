@@ -3,7 +3,6 @@ import * as THREE from "three";
 import { object_store } from "../../stores/Object_Store";
 import { ObjectControllerVM } from "../../view_models/ObjectController_VM";
 import { objectViewModel } from "../../view_models/Object_VM";
-import { renderingContext_store } from "../../stores/RenderingContext_Store";
 
 class MetaClass {
   objectId = 0;

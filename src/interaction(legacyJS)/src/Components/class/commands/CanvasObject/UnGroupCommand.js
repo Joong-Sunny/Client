@@ -1,6 +1,5 @@
 import { objectViewModel } from "../../../view_models/Object_VM";
 import * as THREE from "three";
-import { renderingContext_store } from "../../../stores/RenderingContext_Store";
 
 export default class UnGroupCommand {
   constructor(metaGroup) {

@@ -1,7 +1,6 @@
 import { objectViewModel } from "../../../view_models/Object_VM";
 import * as THREE from "three";
 import MetaClass from "../../Studio/MetaClass";
-import { renderingContext_store } from "../../../stores/RenderingContext_Store";
 import { common_store } from "../../../stores/Common_Store";
 
 export default class GroupCommand {
@@ -15,31 +14,28 @@ export default class GroupCommand {
   }
 
   execute() {
-    for(const child of renderingContext_store.scene.children)
-    {
-      if(child.name === "MultiSelect")
-      {
-        while(child.children.length>0)
-        {
-          const targetmesh = child.children[0]
+    for (const child of renderingContext_store.scene.children) {
+      if (child.name === "MultiSelect") {
+        while (child.children.length > 0) {
+          const targetmesh = child.children[0];
           const worldPosition = new THREE.Vector3();
-          const worldScale = child.scale
-          const worldRotation = child.rotation
+          const worldScale = child.scale;
+          const worldRotation = child.rotation;
           targetmesh.getWorldPosition(worldPosition);
-          renderingContext_store.scene.add(targetmesh)
+          renderingContext_store.scene.add(targetmesh);
           targetmesh.position.x = worldPosition.x;
           targetmesh.position.y = worldPosition.y;
           targetmesh.position.z = worldPosition.z;
-          
+
           targetmesh.scale.x *= worldScale.x;
           targetmesh.scale.y *= worldScale.y;
           targetmesh.scale.z *= worldScale.z;
-          
+
           targetmesh.rotation.x += worldRotation.x;
           targetmesh.rotation.y += worldRotation.y;
           targetmesh.rotation.z += worldRotation.z;
         }
-        renderingContext_store.scene.remove(child)
+        renderingContext_store.scene.remove(child);
       }
       common_store.transcontrol.detach();
     }
@@ -52,21 +48,18 @@ export default class GroupCommand {
     });
     this.parentMetaObject.InitClass();
     const selectedObjectCount = this.metaObjects.length;
-    for(const child of renderingContext_store.scene.children)
-    {
-      if(child.name === "MultiSelect")
-      {
-        while(child.children.length>0)
-        {
-          const targetmesh = child.children[0]
+    for (const child of renderingContext_store.scene.children) {
+      if (child.name === "MultiSelect") {
+        while (child.children.length > 0) {
+          const targetmesh = child.children[0];
           const worldPosition = new THREE.Vector3();
           targetmesh.getWorldPosition(worldPosition);
-          renderingContext_store.scene.add(targetmesh)
+          renderingContext_store.scene.add(targetmesh);
           targetmesh.position.x = worldPosition.x;
           targetmesh.position.y = worldPosition.y;
           targetmesh.position.z = worldPosition.z;
         }
-        renderingContext_store.scene.remove(child)
+        renderingContext_store.scene.remove(child);
       }
     }
 

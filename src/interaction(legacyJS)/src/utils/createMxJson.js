@@ -1,5 +1,4 @@
 import { common_store } from "../Components/stores/Common_Store";
-import { renderingContext_store } from "../Components/stores/RenderingContext_Store";
 import EditableInteraction_VM from "../Components/view_models/07. Editable/EditableInteraction_VM";
 import EditableScene_VM from "../Components/view_models/07. Editable/EditableScene_VM";
 import optimizeSceneJson from "./optimizeSceneJson";

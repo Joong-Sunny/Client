@@ -1,5 +1,4 @@
 // noinspection JSUnusedGlobalSymbols
-
 import { observable } from "mobx";
 import * as THREE from "three";
 

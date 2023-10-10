@@ -7,7 +7,6 @@ import { LoaderUtils } from "./LoaderUtils.js";
 import { unzipSync, strFromU8 } from "three/examples/jsm/libs/fflate.module.js";
 import storeContainer from "../stores/storeContainer";
 import MetaObject from "./Studio/MetaObject.js";
-import { renderingContext_store } from "../stores/RenderingContext_Store";
 import AddObjCommand from "../class/commands/CanvasObject/AddObjCommand";
 
 function Loader() {
