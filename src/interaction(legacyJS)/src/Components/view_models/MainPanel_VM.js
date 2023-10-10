@@ -1,0 +1,3 @@
+
+const MainPanelVM = {};
+export { MainPanelVM };
