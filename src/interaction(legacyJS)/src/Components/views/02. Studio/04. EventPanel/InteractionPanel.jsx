@@ -121,12 +121,8 @@ const History = observer((props) => {
           e.stopPropagation();
         }}
       >
-        {common_store.curCategory === "event" &&
-          common_store.optionLeftTab === "history" && <InteractionHistory />}
-        {common_store.curCategory === "event" &&
-          common_store.optionLeftTab === "hierarchy" && (
-            <InteractionHierarchy />
-          )}
+        {common_store.optionLeftTab === "history" && <InteractionHistory />}
+        {common_store.optionLeftTab === "hierarchy" && <InteractionHierarchy />}
       </Box>
     </>
   );

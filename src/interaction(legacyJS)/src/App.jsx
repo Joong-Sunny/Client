@@ -1,26 +1,15 @@
 import Root from "./Components/views/00. Common/Root_V";
 import { observer } from "mobx-react-lite";
-import React, { useEffect } from "react";
-import { loadersViewModel } from "./Components/view_models/Loaders_VM";
-import { loader_store } from "./Components/stores/Loader_Store";
-import getUrlParams from "./utils/getUrlParams";
-import storeContainer from "./Components/stores/storeContainer";
+import React from "react";
+import { I18nextProvider } from "react-i18next";
+import i18n from "../src/locale/i18n";
 
 const App = observer(() => {
-  const { user_store } = storeContainer;
-  useEffect(() => {
-    loadersViewModel.init();
-  }, [loader_store]);
-
-  useEffect(() => {
-    async function init() {
-      const params = getUrlParams();
-      user_store.setUserId(params.id);
-    }
-    init();
-  }, []);
-
-  return <Root />;
+  return (
+    <I18nextProvider i18n={i18n}>
+      <Root />
+    </I18nextProvider>
+  );
 });
 
 export default App;

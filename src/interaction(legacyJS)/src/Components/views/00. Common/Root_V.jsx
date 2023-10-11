@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import TopBar from "./TopBar_V";
-import MainPanel from "../02. Studio/03. MainPanel/MainPanel_V";
 import { observer } from "mobx-react-lite";
 import React from "react";
 import InteractionPanel from "../02. Studio/04. EventPanel/InteractionPanel";
@@ -14,10 +13,9 @@ import InteractionPanel from "../02. Studio/04. EventPanel/InteractionPanel";
 const Root_V = observer(() => {
   return (
     <>
-      <Box sx={{ width: "100vw", height: "100vh" }}>
-        <TopBar />
+      <Box sx={{ width: "100vw", height: "80vh" }}>
         <InteractionPanel />
-        <MainPanel />
+        <TopBar />
       </Box>
     </>
   );

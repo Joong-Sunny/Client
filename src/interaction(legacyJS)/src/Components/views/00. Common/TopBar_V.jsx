@@ -1,12 +1,9 @@
 import { AppBar, Box } from "@mui/material";
 import React from "react";
-import storeContainer from "../../stores/storeContainer";
 import { observer } from "mobx-react-lite";
 import TopBarEvent from "./Interaction/TopBarInteraction";
 
 const TopBar = observer(() => {
-  const { common_store } = storeContainer;
-
   return (
     <Box sx={style.wrapper}>
       <AppBar

@@ -116,10 +116,10 @@ const InteractionHierarchyList = observer(() => {
                   src={
                     object.type === "group"
                       ? object.folder === "open"
-                        ? "/Icons/Studio/Interaction/Hierarchy/icon_끄룹@2x.png"
-                        : "/Icons/Studio/Interaction/Hierarchy/" +
+                        ? "legacyJS/Icons/Studio/Interaction/Hierarchy/icon_끄룹@2x.png"
+                        : "legacyJS/Icons/Studio/Interaction/Hierarchy/" +
                           iconUrl[object.type]
-                      : "/Icons/Studio/Interaction/Hierarchy/" +
+                      : "legacyJS/Icons/Studio/Interaction/Hierarchy/" +
                         iconUrl[object.type]
                   }
                   alt="icon_object"
