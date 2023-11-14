@@ -1,0 +1,155 @@
+{
+  "sheets": {
+    "0c2a3274-beaf-47ce-afbf-189e0057172b": {
+      "uuid": "0c2a3274-beaf-47ce-afbf-189e0057172b",
+      "name": "시트 1",
+      "nodes": [
+        {
+          "name": "랜덤 1",
+          "uuid": "ffb497c6-8b84-4ef9-95cb-f62c3b5992f6",
+          "inputSockets": {
+            "signal": {
+              "key": "signal",
+              "uuid": "d0c23ba3-13c2-4d14-9368-4fcd6b403e28",
+              "type": "Boolean",
+              "name": "signal",
+              "wires": [],
+              "node": "ffb497c6-8b84-4ef9-95cb-f62c3b5992f6",
+              "isInput": true,
+              "reference": null
+            },
+            "number": {
+              "key": "number",
+              "uuid": "195fde3e-d7fe-4c86-9206-f9d77812be2e",
+              "type": "Number",
+              "name": "number",
+              "wires": [],
+              "node": "ffb497c6-8b84-4ef9-95cb-f62c3b5992f6",
+              "isInput": true,
+              "reference": {
+                "name": "NODE_DAT_RANDOM_RANGE_MAX",
+                "defaultValue": 10,
+                "type": "Number",
+                "tooltipMessage": "0부터 최댓값 까지의 실수가 랜덤하게 출력됩니다.",
+                "node": "ffb497c6-8b84-4ef9-95cb-f62c3b5992f6"
+              }
+            }
+          },
+          "outputSockets": {
+            "random": {
+              "key": "random",
+              "uuid": "ddbdab14-0589-4a5a-8615-d41eafe52fa5",
+              "type": "Number",
+              "name": "random",
+              "wires": [
+                {
+                  "uuid": "040ca5ce-eaa6-437a-82a7-c7eac1333df2",
+                  "headSocket": "261f62c7-1702-4805-ab86-059f578345e5",
+                  "tailSocket": "ddbdab14-0589-4a5a-8615-d41eafe52fa5"
+                }
+              ],
+              "node": "ffb497c6-8b84-4ef9-95cb-f62c3b5992f6",
+              "isInput": false,
+              "reference": null
+            }
+          },
+          "referenceParameter": {},
+          "control": {},
+          "type": "Random",
+          "category": "default",
+          "position": [-176, -151],
+          "group": null
+        },
+        {
+          "name": "랜덤 2",
+          "uuid": "b87ad241-ff4c-4052-b587-9169c7a05bc5",
+          "inputSockets": {
+            "signal": {
+              "key": "signal",
+              "uuid": "2aa74c50-11ca-4ba7-9d9d-97016249347c",
+              "type": "Boolean",
+              "name": "signal",
+              "wires": [],
+              "node": "b87ad241-ff4c-4052-b587-9169c7a05bc5",
+              "isInput": true,
+              "reference": null
+            },
+            "number": {
+              "key": "number",
+              "uuid": "261f62c7-1702-4805-ab86-059f578345e5",
+              "type": "Number",
+              "name": "number",
+              "wires": [
+                {
+                  "uuid": "040ca5ce-eaa6-437a-82a7-c7eac1333df2",
+                  "headSocket": "261f62c7-1702-4805-ab86-059f578345e5",
+                  "tailSocket": "ddbdab14-0589-4a5a-8615-d41eafe52fa5"
+                }
+              ],
+              "node": "b87ad241-ff4c-4052-b587-9169c7a05bc5",
+              "isInput": true,
+              "reference": {
+                "name": "NODE_DAT_RANDOM_RANGE_MAX",
+                "defaultValue": 10,
+                "type": "Number",
+                "tooltipMessage": "0부터 최댓값 까지의 실수가 랜덤하게 출력됩니다.",
+                "node": "b87ad241-ff4c-4052-b587-9169c7a05bc5"
+              }
+            }
+          },
+          "outputSockets": {
+            "random": {
+              "key": "random",
+              "uuid": "92454d37-064d-472f-9fb6-ef8009879ae0",
+              "type": "Number",
+              "name": "random",
+              "wires": [],
+              "node": "b87ad241-ff4c-4052-b587-9169c7a05bc5",
+              "isInput": false,
+              "reference": null
+            }
+          },
+          "referenceParameter": {},
+          "control": {},
+          "type": "Random",
+          "category": "default",
+          "position": [106, -147],
+          "group": null
+        }
+      ],
+      "wires": [
+        {
+          "uuid": "040ca5ce-eaa6-437a-82a7-c7eac1333df2",
+          "headSocket": "261f62c7-1702-4805-ab86-059f578345e5",
+          "tailSocket": "ddbdab14-0589-4a5a-8615-d41eafe52fa5"
+        }
+      ],
+      "groups": [],
+      "hidden": false,
+      "cameraPosition": [5, 13],
+      "cameraZoom": 1,
+      "socketPositions": {
+        "ddbdab14-0589-4a5a-8615-d41eafe52fa5": [
+          180.7075538635254, 40.980058670043945
+        ],
+        "d0c23ba3-13c2-4d14-9368-4fcd6b403e28": [
+          0.0043811798095703125, 72.9679126739502
+        ],
+        "195fde3e-d7fe-4c86-9206-f9d77812be2e": [
+          0.0043811798095703125, 104.95576667785645
+        ],
+        "92454d37-064d-472f-9fb6-ef8009879ae0": [
+          180.70749282836914, 40.980058670043945
+        ],
+        "2aa74c50-11ca-4ba7-9d9d-97016249347c": [
+          0.0043201446533203125, 72.9679126739502
+        ],
+        "261f62c7-1702-4805-ab86-059f578345e5": [
+          0.0043201446533203125, 104.95576667785645
+        ]
+      }
+    }
+  },
+  "selectedSheet": "0c2a3274-beaf-47ce-afbf-189e0057172b",
+  "sheetOrder": ["0c2a3274-beaf-47ce-afbf-189e0057172b"]
+}
