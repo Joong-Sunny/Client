@@ -14,7 +14,6 @@ export default function CustomNode({ id, data }) {
         <Header>
           <span>{data.name}</span>
         </Header>
-
         {Object.entries(data.inputSockets).map(([key, socket]) => {
           return (
             <Body>
@@ -24,13 +23,13 @@ export default function CustomNode({ id, data }) {
                 position={Position.Left}
                 id={socket.uuid}
               />
+              <label htmlFor={'number'}>{socket.key}</label>
               <input
                 id={'number'}
                 type={'number'}
                 onChange={onChange}
                 className={'nodrag'}
               />
-              <label htmlFor={'number'}>{socket.key}</label>
             </Body>
           );
         })}
