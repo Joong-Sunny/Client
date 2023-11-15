@@ -1,22 +1,23 @@
-import { ChangeEvent, useCallback } from 'react';
 import { Handle, Position } from 'reactflow';
 import styled from 'styled-components';
+import NodeReferenceSelector from '@/interaction(legacyJS)/src/Components/views/02. Studio/04. EventPanel/node/Body/NodeReferenceSelector_V.jsx';
+import { CustomNodeData } from '@/react-flow/type.ts';
 
-export default function CustomNode({ id, data }) {
-  console.log('data 봐랑!!', data);
-  const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
-  }, []);
+type CustomNodeProps = {
+  id: string;
+  data: CustomNodeData;
+};
 
+export default function CustomNode({ id, data }: CustomNodeProps) {
   return (
     <>
-      <Wrapper>
+      <Wrapper key={id}>
         <Header>
           <span>{data.name}</span>
         </Header>
         {Object.entries(data.inputSockets).map(([key, socket]) => {
           return (
-            <Body>
+            <Body key={key + socket.uuid}>
               <Handle
                 key={socket.uuid}
                 type="target"
@@ -24,32 +25,33 @@ export default function CustomNode({ id, data }) {
                 id={socket.uuid}
               />
               <label htmlFor={'number'}>{socket.key}</label>
-              <input
-                id={'number'}
-                type={'number'}
-                onChange={onChange}
-                className={'nodrag'}
-              />
+              {socket.reference && (
+                <NodeReferenceSelector reference={socket.reference} />
+              )}
             </Body>
           );
         })}
         {Object.entries(data.outputSockets).map(([key, socket]) => (
-          <Body>
+          <Body key={key + socket.uuid}>
             <Handle
               key={socket.uuid}
               type="source"
               position={Position.Right}
               id={socket.uuid}
             />
-            <input
-              id={'number'}
-              type={'number'}
-              onChange={onChange}
-              className={'nodrag'}
-            />
+            {socket.reference && (
+              <NodeReferenceSelector reference={socket.reference} />
+            )}
             <label htmlFor={'number'}>{socket.key}</label>
           </Body>
         ))}
+        {data.referenceParameter &&
+          Object.entries(data.referenceParameter).map(([key, reference]) => (
+            <Body key={key + reference.name}>
+              <NodeReferenceSelector reference={reference} />
+              <label htmlFor={'number'}>{reference.type}</label>
+            </Body>
+          ))}
       </Wrapper>
     </>
   );
@@ -58,6 +60,7 @@ export default function CustomNode({ id, data }) {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  min-width: 200px;
 `;
 
 const Header = styled.div`
@@ -69,9 +72,10 @@ const Header = styled.div`
 
 const Body = styled.div`
   position: relative;
+  display: flex;
   background-color: #393939;
   padding: 14px 18px;
-  border-radius: 0 0 10px 10px;
+  //border-radius: 0 0 10px 10px;
 
   & > label {
     color: white;
@@ -86,70 +90,3 @@ const Body = styled.div`
     color: white;
   }
 `;
-
-{
-  /*/!* input 예시 *!/*/
-}
-{
-  /*<input*/
-}
-{
-  /*  id={'number'}*/
-}
-{
-  /*  type={'number'}*/
-}
-{
-  /*  onChange={onChange}*/
-}
-{
-  /*  className={'nodrag'}*/
-}
-{
-  /*/>*/
-}
-{
-  /*<Wrapper>*/
-}
-{
-  /*  <Header>*/
-}
-{
-  /*    <span>{data.name}</span>*/
-}
-{
-  /*  </Header>*/
-}
-{
-  /*  <Body>*/
-}
-{
-  /*    <Handle type={'source'} position={Position.Right} id={id} />*/
-}
-{
-  /*    <input*/
-}
-{
-  /*      id={'number'}*/
-}
-{
-  /*      type={'number'}*/
-}
-{
-  /*      onChange={onChange}*/
-}
-{
-  /*      className={'nodrag'}*/
-}
-{
-  /*    />*/
-}
-{
-  /*    <label htmlFor={'number'}>넘버</label>*/
-}
-{
-  /*  </Body>*/
-}
-{
-  /*</Wrapper>*/
-}
